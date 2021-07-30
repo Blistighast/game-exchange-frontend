@@ -65,7 +65,10 @@ export default function Cart() {
         ))}
       </ul>
       <footer>
-        <p>{formatMoney(calcTotalPrice(me.cart))}</p>
+          <p>{formatMoney(calcTotalPrice(me.cart))}</p>
+          <p style={{ fontSize: '0.4em', marginBottom: '1rem', }}>
+            Enter 4242 4242 4242 4242, any future date, and any 3 digits to test checkout.
+          </p>
         <Checkout />
       </footer>
     </CartStyles>

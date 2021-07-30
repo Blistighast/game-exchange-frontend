@@ -21,7 +21,9 @@ export default function Product({ product }) {
           </div>
         </Title>
         <PriceTag>{formatMoney(product.price)}</PriceTag>
-        <p>{product.description}</p>
+        <p>{product.description.length > 200 
+          ? product.description.substring(0, 200) + '...' 
+          : product.description}</p>
         <div className="buttonList">
           <NotSignedIn>
             <Link
@@ -32,6 +34,7 @@ export default function Product({ product }) {
                 },
               }}
             >
+            {/* <Link href={`/update/${product.id}`}> */}
               Edit 🛠 {/* window + . gives you emoji options */}
             </Link>
             <AddToCart id={product.id} />

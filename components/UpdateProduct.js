@@ -1,5 +1,6 @@
 import { useMutation, useQuery } from '@apollo/client';
 import gql from 'graphql-tag';
+import Router from 'next/router';
 import useForm from '../lib/useForm';
 import DisplayError from './ErrorMessage';
 import Form from './styles/Form';
@@ -67,10 +68,10 @@ export default function UpdateProduct({ id }) {
         // const response = await createProduct(); // the variables can also be input inside createProduct
         // clearForm(); // the response from createProduct is the same as data in useMutation above either can be used
         // go to products page
-        // Router.push({
-        //   pathname: `/product/${response.data.createProduct.id}`,
+        Router.push({
+          pathname: `/product/${response.data.updateProduct.id}`,
         // can also add query parameters as next arguement
-        // });
+        });
       }}
     >
       <DisplayError error={error || updateError} />{' '}
