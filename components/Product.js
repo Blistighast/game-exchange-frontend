@@ -12,7 +12,7 @@ export default function Product({ product }) {
     <div>
       <ItemStyles>
         <img
-          src={product?.photo?.image?.publicUrlTransformed} // ? checks if it exists before continuing
+          src={product?.photo?.image?.publicUrlTransformed} // ? checks if it exists before continuing, optional chaining
           alt={product.name}
         />
         <Title>
